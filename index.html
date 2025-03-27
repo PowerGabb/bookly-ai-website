@@ -57,10 +57,59 @@
         menuButton.addEventListener('click', function() {
           mobileMenu.classList.toggle('hidden');
         });
+
+        // Tambahkan event listener untuk tombol download
+        const downloadButtons = document.querySelectorAll('.download-btn');
+        downloadButtons.forEach(button => {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('download-popup').classList.remove('hidden');
+          });
+        });
+
+        // Tutup popup jika user klik di luar popup
+        document.getElementById('popup-overlay').addEventListener('click', function(e) {
+          if (e.target === this) {
+            document.getElementById('download-popup').classList.add('hidden');
+          }
+        });
+
+        // Tambahkan fungsi untuk tombol "Continue with Browser"
+        document.getElementById('continue-browser').addEventListener('click', function() {
+          window.location.href = 'https://app.bookly-ai.com';
+        });
+
+        // Tambahkan fungsi untuk tombol "Download for Android"
+        document.getElementById('download-android').addEventListener('click', function() {
+          window.location.href = 'bookly-ai.apk';
+        });
       });
     </script>
   </head>
   <body class="bg-gradient-to-br from-purple-50 via-white to-pink-50">
+    <!-- Popup Download -->
+    <div id="download-popup" class="hidden fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
+      <div id="popup-overlay" class="fixed inset-0"></div>
+      <div class="bg-white rounded-xl p-8 shadow-2xl relative z-10 max-w-md w-full mx-4">
+        <h3 class="text-2xl font-bold mb-4 text-center bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Pilih Platform Anda</h3>
+        <p class="text-gray-600 mb-6 text-center">Lanjutkan dengan aplikasi mobile atau gunakan versi browser</p>
+        <div class="flex flex-col space-y-4">
+          <button id="download-android" class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-4 rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Download for Android
+          </button>
+          <button id="continue-browser" class="border-2 border-bookly-purple text-bookly-purple px-6 py-4 rounded-xl hover:bg-bookly-light transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            Continue with Browser
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="w-full bg-white/80 backdrop-blur-md z-50 sticky top-0">
       <div class="container mx-auto px-6 py-4">
@@ -78,7 +127,7 @@
             <a href="#how-it-works" class="text-gray-700 hover:text-bookly-purple transition-colors">How It Works</a>
             <a href="#pricing" class="text-gray-700 hover:text-bookly-purple transition-colors">Pricing</a>
             <a href="#testimonials" class="text-gray-700 hover:text-bookly-purple transition-colors">Testimonials</a>
-            <a href="bookly-ai.apk" download class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block">
+            <a href="#" class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block download-btn">
               Download Now
             </a>
           </div>
@@ -98,7 +147,7 @@
             <a href="#how-it-works" class="text-gray-700 hover:text-bookly-purple transition-colors">How It Works</a>
             <a href="#pricing" class="text-gray-700 hover:text-bookly-purple transition-colors">Pricing</a>
             <a href="#testimonials" class="text-gray-700 hover:text-bookly-purple transition-colors">Testimonials</a>
-            <a href="bookly-ai.apk" download class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block text-center">
+            <a href="#" class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block text-center download-btn">
               Download Now
             </a>
           </div>
@@ -123,7 +172,7 @@
           and interactive learning. Make knowledge accessible anytime, anywhere.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate__animated animate__fadeIn animate__delay-2s">
-          <button class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-8 py-4 rounded-full text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+          <button class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-8 py-4 rounded-full text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 download-btn">
             Start Free Trial
           </button>
           <button class="border-2 border-bookly-purple text-bookly-purple px-8 py-4 rounded-full text-lg hover:bg-bookly-light transform hover:-translate-y-1 transition-all duration-300">
@@ -405,7 +454,7 @@
           <h2 class="text-4xl font-bold mb-6">Unlock Your Reading Potential Today</h2>
           <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of readers who have transformed their learning experience with Bookly AI's intelligent audiobook technology.</p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="bookly-ai.apk" download class="bg-white text-bookly-purple px-8 py-4 rounded-full text-lg font-bold hover:bg-bookly-light transform hover:-translate-y-1 transition-all duration-300 shadow-lg inline-block">
+            <a href="#" class="bg-white text-bookly-purple px-8 py-4 rounded-full text-lg font-bold hover:bg-bookly-light transform hover:-translate-y-1 transition-all duration-300 shadow-lg inline-block download-btn">
               Download Now
             </a>
             <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white/10 transform hover:-translate-y-1 transition-all duration-300">
