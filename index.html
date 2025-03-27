@@ -1,0 +1,567 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bookly AI - Aplikasi membaca cerdas dengan AI narration, dukungan multi bahasa, dan alat pembelajaran interaktif. Ubah pengalaman membaca Anda dengan teknologi AI.">
+    <meta name="keywords" content="Bookly AI, AI narration, audiobook, pembelajaran interaktif, aplikasi membaca, AI learning, multi bahasa">
+    <meta name="author" content="Bookly AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bookly-ai.com">
+    <meta property="og:title" content="Bookly AI - Transform Your Reading Experience">
+    <meta property="og:description" content="Experience smart reading with AI-powered narration, multilingual support, and interactive learning tools.">
+    <meta property="og:image" content="https://bookly-ai.com/images/bookly-ai-og.png">
+    <meta property="og:url" content="https://bookly-ai.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bookly AI - Transform Your Reading Experience">
+    <meta name="twitter:description" content="Experience smart reading with AI-powered narration, multilingual support, and interactive learning tools.">
+    <meta name="twitter:image" content="https://bookly-ai.com/images/bookly-ai-og.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Bookly AI - Transform Your Reading Experience | AI-Powered Reading App</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bookly: {
+                purple: '#6C2BD9',
+                pink: '#D946EF',
+                light: '#F3E8FF',
+                dark: '#4A1D96'
+              }
+            },
+            animation: {
+              'float': 'float 3s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get mobile menu button and mobile menu
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Toggle mobile menu
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      });
+    </script>
+  </head>
+  <body class="bg-gradient-to-br from-purple-50 via-white to-pink-50">
+    <!-- Navbar -->
+    <nav class="w-full bg-white/80 backdrop-blur-md z-50 sticky top-0">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div class="bg-gradient-to-br from-bookly-purple to-bookly-pink w-8 h-8 rounded-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <span class="text-2xl font-bold bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Bookly AI</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#features" class="text-gray-700 hover:text-bookly-purple transition-colors">Features</a>
+            <a href="#how-it-works" class="text-gray-700 hover:text-bookly-purple transition-colors">How It Works</a>
+            <a href="#pricing" class="text-gray-700 hover:text-bookly-purple transition-colors">Pricing</a>
+            <a href="#testimonials" class="text-gray-700 hover:text-bookly-purple transition-colors">Testimonials</a>
+            <a href="bookly-ai.apk" download class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block">
+              Download Now
+            </a>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+          <div class="flex flex-col space-y-4">
+            <a href="#features" class="text-gray-700 hover:text-bookly-purple transition-colors">Features</a>
+            <a href="#how-it-works" class="text-gray-700 hover:text-bookly-purple transition-colors">How It Works</a>
+            <a href="#pricing" class="text-gray-700 hover:text-bookly-purple transition-colors">Pricing</a>
+            <a href="#testimonials" class="text-gray-700 hover:text-bookly-purple transition-colors">Testimonials</a>
+            <a href="bookly-ai.apk" download class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 inline-block text-center">
+              Download Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6">
+      <div class="text-center py-16">
+        <div class="mb-8 animate-float">
+          <div class="bg-gradient-to-br from-bookly-purple to-bookly-pink w-20 h-20 rounded-2xl mx-auto flex items-center justify-center mb-4 shadow-lg">
+            <img src="bookly-ai.png" alt="Bookly AI Logo">
+          </div>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate__animated animate__fadeIn">
+          <span class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Bring Your Books to Life</span><br/>
+          with AI Technology
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
+          Experience smart reading with AI-powered narration, multilingual support, 
+          and interactive learning. Make knowledge accessible anytime, anywhere.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate__animated animate__fadeIn animate__delay-2s">
+          <button class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-8 py-4 rounded-full text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+            Start Free Trial
+          </button>
+          <button class="border-2 border-bookly-purple text-bookly-purple px-8 py-4 rounded-full text-lg hover:bg-bookly-light transform hover:-translate-y-1 transition-all duration-300">
+            Watch Demo
+          </button>
+        </div>
+
+        <!-- Phone Mockups -->
+        <div class="relative max-w-5xl mx-auto overflow-hidden px-4">
+          <div class="flex justify-center items-center">
+            <img src="https://placehold.co/280x560/6C2BD9/FFFFFF/?text=Bookly+AI" alt="Bookly AI Screenshot 1" class="w-[140px] md:w-[280px] transform -rotate-12 relative z-10 shadow-xl rounded-3xl animate-pulse-slow"/>
+            <img src="https://placehold.co/280x560/D946EF/FFFFFF/?text=Bookly+AI" alt="Bookly AI Screenshot 2" class="w-[140px] md:w-[280px] mx-[-25px] md:mx-[-50px] relative z-20 shadow-xl rounded-3xl"/>
+            <img src="https://placehold.co/280x560/6C2BD9/FFFFFF/?text=Bookly+AI" alt="Bookly AI Screenshot 3" class="w-[140px] md:w-[280px] transform rotate-12 relative z-10 shadow-xl rounded-3xl animate-pulse-slow"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <article id="features" class="py-20">
+        <h2 class="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Powerful Features</h2>
+        <p class="text-gray-600">Discover a new way to experience your favorite books</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 bg-white rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-16 h-16 bg-gradient-to-br from-bookly-purple to-bookly-pink rounded-lg flex items-center justify-center mb-6 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">AI Narration</h3>
+            <p class="text-gray-600">Listen to books with natural-sounding voices powered by advanced AI technology. Choose from different voice styles and accents.</p>
+          </div>
+          <div class="p-8 bg-white rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-16 h-16 bg-gradient-to-br from-bookly-purple to-bookly-pink rounded-lg flex items-center justify-center mb-6 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Multilingual Support</h3>
+            <p class="text-gray-600">Translate and listen to books in over 50 languages instantly. Break language barriers with one tap.</p>
+          </div>
+          <div class="p-8 bg-white rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-16 h-16 bg-gradient-to-br from-bookly-purple to-bookly-pink rounded-lg flex items-center justify-center mb-6 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">AI Q&A Assistant</h3>
+            <p class="text-gray-600">Ask questions and get intelligent answers from the book's content. Perfect for studying and deeper understanding.</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div class="p-8 bg-white rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+            <div class="w-16 h-16 bg-gradient-to-br from-bookly-purple to-bookly-pink rounded-lg flex items-center justify-center mb-6 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Smart Study Tools</h3>
+            <p class="text-gray-600">Create flashcards, summaries, and study guides automatically. Track your learning progress and retention with AI-powered analytics.</p>
+          </div>
+          <div class="p-8 bg-white rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+            <div class="w-16 h-16 bg-gradient-to-br from-bookly-purple to-bookly-pink rounded-lg flex items-center justify-center mb-6 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Offline Access</h3>
+            <p class="text-gray-600">Download books and audiobooks for offline reading and listening. Enjoy your content anywhere, even without internet connection.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="py-20" data-aos="fade-up">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">How Bookly AI Works</h2>
+          <p class="text-gray-600">Three simple steps to transform your reading experience</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-20 h-20 bg-bookly-light rounded-full mx-auto flex items-center justify-center mb-6 text-bookly-purple text-2xl font-bold">1</div>
+            <h3 class="text-xl font-semibold mb-2">Choose a Book</h3>
+            <p class="text-gray-600">Select from thousands of curated books in our collection</p>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-20 h-20 bg-bookly-light rounded-full mx-auto flex items-center justify-center mb-6 text-bookly-purple text-2xl font-bold">2</div>
+            <h3 class="text-xl font-semibold mb-2">Choose Your Settings</h3>
+            <p class="text-gray-600">Select language, voice type, and reading preferences</p>
+          </div>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-20 h-20 bg-bookly-light rounded-full mx-auto flex items-center justify-center mb-6 text-bookly-purple text-2xl font-bold">3</div>
+            <h3 class="text-xl font-semibold mb-2">Enjoy & Learn</h3>
+            <p class="text-gray-600">Listen, interact, and engage with your book in a whole new way</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Pricing Section -->
+      <section id="pricing" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl my-16" data-aos="fade-up">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Simple Pricing</h2>
+          <p class="text-gray-600">Choose the plan that works for you</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+          <div class="w-full md:w-80 p-8 bg-white rounded-xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold mb-2">Free</h3>
+              <div class="text-bookly-purple text-5xl font-bold mb-4">$0</div>
+              <p class="text-gray-500 mb-6">For casual readers</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>5 books per month</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Basic AI narration</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>10 AI questions per book</span>
+              </li>
+              <li class="flex items-center text-gray-400">
+                <svg class="h-5 w-5 text-gray-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span>Limited translations</span>
+              </li>
+            </ul>
+            <button class="w-full py-3 bg-gray-100 rounded-lg text-bookly-purple font-medium hover:bg-gray-200 transition-colors">
+              Get Started
+            </button>
+          </div>
+          
+          <div class="w-full md:w-80 p-8 bg-gradient-to-br from-bookly-purple to-bookly-pink rounded-xl shadow-xl transform md:scale-110 relative" data-aos="fade-up" data-aos-delay="200">
+            <div class="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-3 py-1 rounded-tr-xl rounded-bl-xl">POPULAR</div>
+            <div class="text-center">
+              <h3 class="text-2xl font-bold mb-2 text-white">Pro</h3>
+              <div class="text-white text-5xl font-bold mb-1">$9.90</div>
+              <p class="text-purple-200 mb-1">per month</p>
+              <p class="text-white mb-6">For avid readers</p>
+            </div>
+            <ul class="space-y-3 mb-8 text-white">
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-yellow-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Unlimited books</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-yellow-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Premium AI voices</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-yellow-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Unlimited AI questions</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-yellow-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Full translation support</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-yellow-300 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Offline access</span>
+              </li>
+            </ul>
+            <button class="w-full py-3 bg-white rounded-lg text-bookly-purple font-medium hover:bg-purple-50 transition-colors">
+              Start 14-Day Free Trial
+            </button>
+          </div>
+          
+          <div class="w-full md:w-80 p-8 bg-white rounded-xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold mb-2">Premium</h3>
+              <div class="text-bookly-purple text-5xl font-bold mb-1">$17.90</div>
+              <p class="text-gray-500 mb-1">per month</p>
+              <p class="text-gray-500 mb-6">For professionals & academics</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Everything in Pro</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>AI study guides generation</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Advanced research tools</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Priority support</span>
+              </li>
+            </ul>
+            <button class="w-full py-3 bg-gray-100 rounded-lg text-bookly-purple font-medium hover:bg-gray-200 transition-colors">
+              Start 14-Day Free Trial
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="py-20" data-aos="fade-up">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">What Our Users Say</h2>
+          <p class="text-gray-600">Join thousands of satisfied readers worldwide</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-bookly-light rounded-full mr-4"></div>
+              <div>
+                <h4 class="font-semibold">Sarah Johnson</h4>
+                <p class="text-gray-500 text-sm">Student</p>
+              </div>
+            </div>
+            <div class="flex text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-600">"Bookly AI has revolutionized how I study! The AI Q&A feature helps me understand complex topics, and the voice narration makes it easy to learn while commuting."</p>
+          </div>
+          <div class="p-8 bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-bookly-light rounded-full mr-4"></div>
+              <div>
+                <h4 class="font-semibold">Michael Chen</h4>
+                <p class="text-gray-500 text-sm">Business Professional</p>
+              </div>
+            </div>
+            <div class="flex text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-600">"I can finally get through my reading list! The multilingual support is incredible - I've been using it to improve my Spanish while reading business books."</p>
+          </div>
+          <div class="p-8 bg-white rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-bookly-light rounded-full mr-4"></div>
+              <div>
+                <h4 class="font-semibold">Emily Rodriguez</h4>
+                <p class="text-gray-500 text-sm">Book Enthusiast</p>
+              </div>
+            </div>
+            <div class="flex text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-600">"The natural-sounding AI voices are incredible! It's like having a professional narrator read to me. Perfectly handles different character voices too."</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-gradient-to-br from-bookly-purple to-bookly-pink text-white rounded-2xl py-12 px-8 my-20 transform hover:scale-[1.01] transition-all duration-500" data-aos="zoom-in">
+        <div class="text-center">
+          <h2 class="text-4xl font-bold mb-6">Unlock Your Reading Potential Today</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of readers who have transformed their learning experience with Bookly AI's intelligent audiobook technology.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="bookly-ai.apk" download class="bg-white text-bookly-purple px-8 py-4 rounded-full text-lg font-bold hover:bg-bookly-light transform hover:-translate-y-1 transition-all duration-300 shadow-lg inline-block">
+              Download Now
+            </a>
+            <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white/10 transform hover:-translate-y-1 transition-all duration-300">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- App Screenshots Carousel -->
+      <section class="py-20" data-aos="fade-up">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Experience Bookly AI</h2>
+          <p class="text-gray-600">See how our app transforms the way you read and learn</p>
+        </div>
+        <div class="flex overflow-x-auto pb-8 space-x-6 px-6 snap-x scrollbar-hide">
+          <div class="flex-shrink-0 w-80 rounded-xl overflow-hidden shadow-lg snap-center" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://placehold.co/320x640/6C2BD9/FFFFFF/?text=Reading+Screen" alt="App Screenshot 1" class="w-full h-auto">
+          </div>
+          <div class="flex-shrink-0 w-80 rounded-xl overflow-hidden shadow-lg snap-center" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://placehold.co/320x640/D946EF/FFFFFF/?text=Library+View" alt="App Screenshot 2" class="w-full h-auto">
+          </div>
+          <div class="flex-shrink-0 w-80 rounded-xl overflow-hidden shadow-lg snap-center" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://placehold.co/320x640/6C2BD9/FFFFFF/?text=Q%26A+Feature" alt="App Screenshot 3" class="w-full h-auto">
+          </div>
+          <div class="flex-shrink-0 w-80 rounded-xl overflow-hidden shadow-lg snap-center" data-aos="fade-up" data-aos-delay="400">
+            <img src="https://placehold.co/320x640/D946EF/FFFFFF/?text=Voice+Settings" alt="App Screenshot 4" class="w-full h-auto">
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl my-16" data-aos="fade-up">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text">Frequently Asked Questions</h2>
+          <p class="text-gray-600">Everything you need to know about Bookly AI</p>
+        </div>
+        <div class="max-w-3xl mx-auto px-6">
+          <div class="mb-6 bg-white rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-xl font-semibold mb-2">What types of books are available on Bookly AI?</h3>
+            <p class="text-gray-600">Bookly AI offers a wide variety of books including textbooks, novels, scientific articles, and children's books. All books are optimized with our AI technology for an enhanced reading experience.</p>
+          </div>
+          <div class="mb-6 bg-white rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-xl font-semibold mb-2">How accurate is the AI narration?</h3>
+            <p class="text-gray-600">Our AI narration uses advanced deep learning models to produce natural-sounding voices with proper intonation, pacing, and even emotion. It's designed to mimic human reading patterns and can handle complex vocabulary and multiple languages.</p>
+          </div>
+          <div class="mb-6 bg-white rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-xl font-semibold mb-2">Can I use Bookly AI without an internet connection?</h3>
+            <p class="text-gray-600">Yes! While initial processing requires an internet connection, you can download books and their AI-narrated audio for offline use. This makes Bookly AI perfect for travel, commuting, or areas with limited connectivity.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-md" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="text-xl font-semibold mb-2">How does the subscription work?</h3>
+            <p class="text-gray-600">Bookly AI offers flexible subscription options. Our Pro plan ($9.99/month) gives you unlimited books, premium voices, and full translation support. The Premium plan ($19.99/month) adds advanced study tools and AI-generated study materials. All plans start with a 7-day free trial.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="py-16 max-w-4xl mx-auto px-6" data-aos="fade-up">
+        <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-8 text-center">
+          <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+          <p class="text-gray-600 mb-6">Get the latest news, tips and updates from Bookly AI</p>
+          <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+            <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-bookly-purple">
+            <button class="bg-gradient-to-r from-bookly-purple to-bookly-pink text-white px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-50 py-12 mt-16">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <h3 class="text-xl font-bold bg-gradient-to-r from-bookly-purple to-bookly-pink text-transparent bg-clip-text mb-4">Bookly AI</h3>
+              <p class="text-gray-600">Transforming reading experiences with AI technology and making knowledge accessible anytime, anywhere.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-4">Product</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li><a href="#features" class="hover:text-bookly-purple">Features</a></li>
+                <li><a href="#pricing" class="hover:text-bookly-purple">Pricing</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Download</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Updates</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-4">Company</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li><a href="#" class="hover:text-bookly-purple">About Us</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Careers</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Blog</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Press</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-4">Support</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li><a href="#" class="hover:text-bookly-purple">Help Center</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Contact Us</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-bookly-purple">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    </script>
+
+    <!-- Tambahkan schema markup untuk FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What types of books are available on Bookly AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bookly AI offers a wide variety of books including textbooks, novels, scientific articles, and children's books. All books are optimized with our AI technology for an enhanced reading experience."
+        }
+      },
+      // ... tambahkan FAQ lainnya ...
+      ]
+    }
+    </script>
+
+    <!-- Tambahkan schema markup untuk Product -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bookly AI",
+      "applicationCategory": "EducationalApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.90",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1000"
+      }
+    }
+    </script>
+  </body>
+</html>
